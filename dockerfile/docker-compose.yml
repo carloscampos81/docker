@@ -3,8 +3,12 @@ version: '3'
 services:
   influxdb:
     image: influxdb
+    #volumes:
+     #- $PWD/influxdb:/var/lib/influxdb
+     networks:
+      - monitoring
     volumes:
-      - $PWD/influxdb:/var/lib/influxdb
+      - influxdb-volume:/var/lib/influxdb
     ports:
       - "8083:8083"
       - "8086:8086"
@@ -24,7 +28,9 @@ services:
       - ./home:/home
       - /var/run/docker.sock:/var/run/docker.sock
   grafana:
-    image: grafana/grafana
+    image: grafana/grafana:6.5.0
+    container_name: grafana
+    restart: always
     volumes:
       - $PWD/data/grafana:/var/lib/grafana
     ports:
@@ -40,7 +46,6 @@ services:
     depends_on:
       - influxdb
 
-
       #jenkins:
     #image: jenkins:latest
     #volumes:
@@ -48,3 +53,6 @@ services:
     #ports:
       #- "8080:8080"
       #- "50000:50000"
+
+      #name
+      
