@@ -1,0 +1,22 @@
+
+Comandos:
+
+1- Acesso ao container 
+
+    sudo docker exec -it c88698191823 /bin/bash
+
+2- Executar uma imagem
+
+    docker run -ti --user root --volume /var/lib/grafana--entrypoint bash grafana/grafana:5.1.0
+    docker run -d -p 3000:3000 --name grafana grafana/grafana:6.5.0
+
+3- Executar o docker composer
+
+    sudo docker-compose up
+
+4- Verificar quais container estão excutando
+
+    sudo docker ps -a
+
+
+teste
