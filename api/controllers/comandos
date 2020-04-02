@@ -1,0 +1,25 @@
+ssh -i "terraform-aws.pem" ec2-user@ec2-3-82-250-71.compute-1.amazonaws.com
+
+ssh -i ~/.ssh/terraform-aws ec2-user@ec2-3-82-250-71.compute-1.amazonaws.com
+
+ssh -i ~/.ssh/terraform-aws ec2-user@ec2-35-171-85-160.compute-1.amazonaws.com
+
+ssh -i ~/.ssh/terraform-aws ec2-user@ec2-54-243-9-19.compute-1.amazonaws.com
+
+ssh -i ~/.ssh/terraform-aws ec2-user@ec2-3-87-232-73.compute-1.amazonaws.com
+
+curl http://localhost:3000/api_comentarios/esportes -X POST -v; -H "Content-type: application/json" -d '{
+    "usuario":"carloscampos",
+    "data":"01/04/2020",
+    "materia":"Mundial de Clubes da Fifa",
+    "comentario":"Desafio Globo"
+}
+';echo
+
+curl http://localhost:3000/api_comentarios/esportes -X POST -v -H "Content-type: application/json" -d @files/esportes.json
+
+curl "http://localhost:3000/api_comentarios/esportes" -X POST -v -H "Content-type: application/json" -d "{"usuario":"carloscampos","data":"01/04/2020",
+"materia":"Mundial de Clubes da Fifa","comentario":"Desafio Globo"}"
+
+
+curl -X POST "https://api-server.com/API/index.php/member/signin" -d "{"description":"","phone":"","lastname":"","app_version":"2.6.2","firstname":"","password":"my_pass","city":"","apikey":"213","lang":"fr","platform":"1","email":"email@example.com","pseudo":"example"}"
