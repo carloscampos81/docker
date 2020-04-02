@@ -1,0 +1,11 @@
+output "dev" {
+  value = "${aws.instance.dev.public_ip}"
+}
+
+output "homolog" {
+  value = "${aws.instance.homolog.public_ip}"
+}
+
+output "prod" {
+  value = "${aws.instance.prod.public_ip}"
+}
